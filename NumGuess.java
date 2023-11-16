@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class NumGuess{
-    public static void main(String[] args) {
+    public static void numguess(String[] args) {
         int guess, number;
         Scanner x = new Scanner(System.in);
 
