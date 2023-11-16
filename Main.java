@@ -13,7 +13,7 @@ public class Main{
         System.out.println("Option 4: Number Guessing Game");
         System.out.println("Option 5: ");
         System.out.println("Option 6: ");
-        System.out.println("Option 7: ");
+        System.out.println("Option 7: Exit");
         option = x.nextInt();
 
         switch (option) {
@@ -30,16 +30,16 @@ public class Main{
                 NumGuess.numguess(args);
                 break;
             case 5:
-
+                
                 break;
             case 6:
 
                 break;
             case 7:
-
-                break;
-        
+                Exit.exit(args);
+                break;        
             default:
+                System.out.println("Invalid Input...");
                 break;
         }
         x.close();

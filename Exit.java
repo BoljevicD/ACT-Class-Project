@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Exit{
-    public static void main (String[] args) {
+    public static void exit (String[] args) {
 
         Scanner x = new Scanner(System.in);
 
