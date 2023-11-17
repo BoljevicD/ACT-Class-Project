@@ -7,7 +7,7 @@ public class Main{
         Scanner x = new Scanner(System.in);
 
         System.out.println("Choose an option: ");
-        System.out.println("Option 1: ");
+        System.out.println("Option 1: Prime Integers");
         System.out.println("Option 2: ");
         System.out.println("Option 3: ");
         System.out.println("Option 4: Number Guessing Game");
@@ -18,7 +18,7 @@ public class Main{
 
         switch (option) {
             case 1:
-                
+                PrimeInt.prime(args);
                 break;
             case 2:
 
@@ -39,7 +39,7 @@ public class Main{
                 Exit.exit(args);
                 break;        
             default:
-                System.out.println("Invalid Input...");
+                System.out.println("Invalid Input!");
                 break;
         }
         x.close();
