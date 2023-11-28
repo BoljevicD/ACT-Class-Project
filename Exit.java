@@ -18,6 +18,7 @@ public class Exit{
         else{
             System.out.println("Please respond with YES or NO");
         }
+        
         x.close();
     }
 }

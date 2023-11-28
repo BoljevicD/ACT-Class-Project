@@ -1,57 +1,64 @@
 import java.util.*;
 
 public class StringMorse{
-    public static void main(String[] args) {
-        Scanner x = new Scanner(System.in);
-        String answer;
-        String text;
-        
-        String[] alpha = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-        "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
-        "X", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
-        " " };
+
+    public static void Translator(String[] args) {
+        Scanner userInputScanner = new Scanner(System.in);
+        String userInput;
+        String textToTranslate;
+        StringBuilder translatedText = new StringBuilder();
+        char[] alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+        'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+        ' ' };
 
         String[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
         "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
         "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--",
         "--..", ".----", "..---", "...--", "....-", ".....", "-....",
         "--...", "---..", "----.", "-----", "|" };
+        do {
+            // get the userinput
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Welcome to Morse to English and English to Morse translator!");
+        System.out.println("M - Morse to English");
+        System.out.println("E - English to Morse");
+        System.out.println("X - Exit");
+        System.out.println("--------------------------------------------------------------");
+        userInput = userInputScanner.nextLine().toUpperCase();
+        if(userInput.equals("M"))
 
-        System.out.println("Type M for Morse to English or E for English to Morse");
-        answer = x.nextLine();
-
-        if(answer.equals("M")){
+        if(userInput.equals("M")){
             System.out.println("Enter a phrase in Morse");
-            text = x.nextLine();
-            String[] strings = text.split(" ");
-            StringBuilder english = new StringBuilder();
+            textToTranslate = userInputScanner.nextLine();
+            String[] strings = textToTranslate.split(" ");
             for(String s : strings){
                 for(int i=0; i<morse.length; i++){
                     if(morse[i].equals(s)){
-                        english.append(alpha[i]);
+                        translatedText.append(alpha[i]);
                         break;
                     }
                 }
             }
-            System.out.println(english);
+            System.out.println(translatedText);
         }
-        else if(answer.equals("E")){
+        if(userInput.equals("E")){
             System.out.println("Enter a phrase in English");
-            text = x.nextLine();
-            String[] strings = text.split(" ");
-            StringBuilder morseCode = new StringBuilder();
-            for(String s : strings){
-                for(int i=0; i<alpha.length; i++){
-                    if(alpha[i].equals(s)){
-                        morseCode.append(morse[i]);
+            textToTranslate = userInputScanner.nextLine().toUpperCase();
+            for(int y=0; y<textToTranslate.length(); y++ ){
+                for(int z=0; z<alpha.length; z++){
+                    if(textToTranslate.charAt(y) == alpha[z]){
+                        translatedText.append(morse[z] +" ");
                         break;
                     }
                 }
             }
-            System.out.println(morseCode);
+            System.out.println("Morse is:"+translatedText);
         }
-        x.close();
-    }
-
         
+    }
+        while (userInput != "M" || userInput != "E");
+        userInputScanner.close();
+    }       
+
 }

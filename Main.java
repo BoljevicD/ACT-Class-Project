@@ -24,7 +24,7 @@ public class Main{
                 PowersOfSix.main(args);
                 break;
             case 3:
-                StringMorse.main(args);
+                StringMorse.Translator(args);
                 break;
             case 4:
                 NumGuess.numguess(args);
