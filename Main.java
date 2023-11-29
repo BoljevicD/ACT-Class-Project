@@ -14,6 +14,7 @@ public class Main{
         System.out.println("Option 5: Sum of All Multiples of 3 or 5 Bellow 1000");
         System.out.println("Option 6: Nth Term of The Fibonacci Sequence");
         System.out.println("Option 7: Exit");
+        System.out.println();
         option = x.nextInt();
 
         switch (option) {
