@@ -9,7 +9,7 @@ When the user guesses the number, the program congratulates them.
 import java.util.*; //imported the entire java.util package
 
 public class NumGuess{
-    public static void numguess(String[] args) { //function numguess
+    public static void main(String[] args) { //function numguess
         int guess, number; //integer variables guess and number
         int count = 0;
         Scanner x = new Scanner(System.in); //scanner x used for user input
@@ -19,6 +19,7 @@ public class NumGuess{
         do{
             System.out.println("Make a guess: ");
             guess = x.nextInt(); //variable guess is equal to user input
+            
             if(guess < number){ //if the guess is lower than the randomly generated number prints Higher
                 System.out.println("Higher");
                 
@@ -30,6 +31,5 @@ public class NumGuess{
         }while(guess != number); //loops the code until the user guesses the number
 
         System.out.println("You guessed!!! \nNumber of guesses: "+count);
-        x.close(); //closing the scanner to prevent bugs
     }
 }

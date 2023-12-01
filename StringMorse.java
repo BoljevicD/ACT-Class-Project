@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class StringMorse{
-    public static void three(){
+    public static void main(){
         Scanner input = new Scanner(System.in);
         char[] letter = { 'a', 'b', 'c', 'd', 'e', 'f',
                           'g', 'h', 'i', 'j', 'k', 'l',
@@ -22,20 +22,65 @@ public class StringMorse{
             x = input.nextInt();
         switch(x){
             case 1:
-                System.out.println("Please provide input:");
                 morseConvert(morse, letter);
                 break;
             case 2:
-                System.out.println("Please provide input:");
                 engConvert(morse, letter);
                 break;
             default:
                 System.out.println("Invalid input, please pick either 1 or 2.");
-                String morseLang = input.nextLine();
-                engConvert(morse, letter);
-                break;
+                continue;
         }
         }
         while(2<x || x<1);
+    }
+    public static void morseConvert(String[] morse, char[] letter) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Morse Code: ");
+        String userInput = input.nextLine();
+        String[] inputArr = userInput.split(" ");
+        StringBuilder result = new StringBuilder();
+    
+        for (String s : inputArr) {
+            int index = -1;
+            for (int i = 0; i < morse.length; i++) {
+                if (morse[i].equals(s)) {
+                    index = i;
+                    break;
+                }
+            }
+            if (index != -1) {
+                result.append(letter[index]);
+            } else {
+                System.out.println("Unknown Morse Code");
+                return;
+            }
+        }
+    
+        System.out.println("Converted text: " + result.toString());
+    }
+    public static void engConvert(String[] morse, char[] letter) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter English Text: ");
+        String userInput = input.nextLine();
+        StringBuilder result = new StringBuilder();
+    
+        for (char c : userInput.toCharArray()) {
+            boolean found = false;
+            for (int i = 0; i < letter.length; i++) {
+                if (c == letter[i]) {
+                    result.append(morse[i]);
+                    result.append(' ');
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Unknown character: " + c);
+                return;
+            }
+        }
+    
+        System.out.println("Converted Morse Code: " + result.toString().trim());
     }
 }

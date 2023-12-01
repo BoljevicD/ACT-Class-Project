@@ -5,7 +5,7 @@ their sum and average.
  */
 public class PrimeInt {
 
-    public static void prime(String[] args) { //function that uses the boolean function
+    public static void main(String[] args) { //function that uses the boolean function
         int number; //integer variable 
         
         for(number = 0; number<=200; number++){ //loops from 0 to 200

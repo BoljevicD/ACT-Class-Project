@@ -9,7 +9,8 @@ public class Main{
     public static void main (String[] args){
     
     Scanner x = new Scanner(System.in); //scanner x used for user input
-    int option; //integer variable option
+    int option = 0; //integer variable option
+    System.out.println("");
 
     do{
         System.out.println("Choose an option: ");
@@ -22,8 +23,9 @@ public class Main{
         System.out.println("Option 7: Exit");
         System.out.println();
         option = x.nextInt(); //option is equal to user input
+        System.out.println();
         if(option == 1){ //if option is equal to 1 the following code will run
-            PrimeInt.prime(args); //class PrimeInt, function prime
+            PrimeInt.main(args); //class PrimeInt, function prime
             System.out.println();
             continue; //this allows the code to loop back to the beginning after executing PrimeInt.prime
         }
@@ -33,12 +35,13 @@ public class Main{
             continue; //this allows the code to loop back to the beginning after executing PowersOfSix.main
         }
         else if(option == 3){ //if option is equal to 3 the following code will run
-            System.out.println(); //class PrimeInt, function prime
+            StringMorse.main(); //class PrimeInt, function prime
             System.out.println();
             continue; //this allows the code to loop back to the beginning after executing PrimeInt.prime
         }
         else if(option == 4){ //if option is equal to 4 the following code will run
-            NumGuess.numguess(args); //class NumGuess, function numguess
+            NumGuess.main(args); //class NumGuess, function numguess
+            x.nextLine(); // consume the new line character
             System.out.println();
             continue; //this allows the code to loop back to the beginning after executing NumGuess.numguess
         }
@@ -52,13 +55,15 @@ public class Main{
             System.out.println();
             continue; //this allows the code to loop back to the beginning after executing Fibonacci.main
         }
-        else{ //any other value for option will run the following code
+        else if(option > 7 || option < 1){ //any other value for option will run the following code
             System.out.println("Invalid input");
             System.out.println();
             continue; //this allows the code to loop back to the beginning
         }
     }while(option != 7);
 
-        x.close();
+    System.out.println("Thank you for using the program.\nSee you another time!");
+    
+    x.close();
     }
 }

@@ -27,6 +27,5 @@ public class Fibonacci {
             int result = fibonacci(term - 1); //subtracts 1 since the sequence starts from 0
             System.out.println("The " + term + "th term of the Fibonacci sequence is: " + result);
         }
-        x.close(); //closing the scanner to avoid bugs
     }
 }
