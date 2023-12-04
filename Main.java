@@ -11,6 +11,8 @@ public class Main{
     Scanner x = new Scanner(System.in); //scanner x used for user input
     int option = 0; //integer variable option
     System.out.println("");
+    System.out.print("Welcome to the CS 105 Class Project!");
+    System.out.println("");
 
     do{
         System.out.println("Choose an option: ");
